@@ -12,7 +12,7 @@ function BookCatalogPage() {
     fetch("http://localhost:3000/api/books", {
       method: "GET",
       headers: {
-        Authorization: Bearer ${token},
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => {
