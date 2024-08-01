@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcyMjQxNTgwOCwiZXhwIjoxNzIyNDE5NDA4fQ.ousXXIpcWDdEsnrWeB0hOqdO_DF8wTgd0QC3GWUa00k';
+const token = localStorage.getItem('token');
 
 const membersAPI = axios.create({
   baseURL: 'http://localhost:3000/api', 
