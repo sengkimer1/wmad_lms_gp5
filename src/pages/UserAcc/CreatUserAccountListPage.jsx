@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-const token= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcxLCJpYXQiOjE3MjI0MDg2MjcsImV4cCI6MTcyMjQ0NDYyN30.BrKAJFHlmYGifDpscExDXnbe3eg0reLyt6xlwGVNbwU" 
+const token = localStorage.getItem("token")
 const accountAPI= axios.create({
   baseURL : "http://localhost:3000/api",
   headers : {
