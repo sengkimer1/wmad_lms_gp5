@@ -45,11 +45,6 @@ function ViewBookCatalog() {
           Authorization: `Bearer ${token}`,
         },
       })
-        .then((res) => {
-          if (res.ok) {
-            setBooks((Books) => Books.filter((book) => book.id !== id));
-          } 
-        })
         .catch((err) => console.error(err));
     }
   };
