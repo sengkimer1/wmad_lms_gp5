@@ -10,6 +10,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import CreateUserAccountListPage from "./pages/UserAcc/CreatUserAccountListPage"
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
+import UserAccountViewPage from "./pages/UserAcc/UserAccountViewPagess";
+
 
 function App() {
   return (
@@ -21,13 +23,17 @@ function App() {
         <Route path="/" element={<DashboardPage />} />
         <Route path="/user-account">
           <Route index element={<CreateUserAccountListPage />} />
-         
+          {/* <Route index element={<UserAccountDetailsPage />} /> */}
+    
         </Route>
         <Route path="/book-catalog" element={<BookCatalogPage />} />
         <Route path="/book-issue" element={<BookIssuePage />} />
         <Route path="/member" element={<MemberPage />} />
+        <Route path="/user_accounts/:id" element={<UserAccountViewPage />} />
+        
       </Route>
     </Routes>
+    
     
   );
   
