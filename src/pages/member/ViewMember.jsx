@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 
 function ViewBookCatalog() {
   const [members, setData] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -27,6 +28,25 @@ function ViewBookCatalog() {
       });
   }, [id]);
 
+  const handleDelete = (id) => {
+    const isConfirmed = window.confirm("Are you sure you want to delete this member?");
+    
+    if (isConfirmed) {
+      const token = localStorage.getItem("token");
+      navigate("/member");
+      
+      fetch(`http://localhost:3000/api/members/`+id, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .catch((error) => {
+        console.error("Error", error);
+      });
+    }
+  };
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Member Information</h1>
@@ -39,7 +59,7 @@ function ViewBookCatalog() {
         <button className="bg-blue-500 text-white py-2 px-5 rounded-lg mr-4">
           Update
         </button>
-        <button className="bg-red-500 text-white py-2 px-5 rounded-lg">
+        <button onClick={() => handleDelete(members.id)} className="bg-red-500 text-white py-2 px-5 rounded-lg">
           Delete
         </button>
       </div>

@@ -10,7 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import CreateUserAccountListPage from "./pages/UserAcc/CreatUserAccountListPage"
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
-import ViewMember from "./components/ViewMember";
+import ViewMember from "./pages/member/ViewMember";
 
 function App() {
   return (

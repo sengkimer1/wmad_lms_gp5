@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';  // Import Link
+import { Link } from 'react-router-dom';
 import { getMember } from '../../api/MemberApi';
 
 const MembersPage = () => {
