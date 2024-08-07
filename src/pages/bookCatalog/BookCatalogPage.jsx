@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 function BookCatalogPage() {
@@ -9,7 +10,7 @@ function BookCatalogPage() {
     const token = localStorage.getItem("token");
 
 
-    fetch("http://localhost:3000/api/books", {
+    fetch(`http://localhost:3000/api/books`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -31,9 +32,7 @@ function BookCatalogPage() {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Book Catalog</h1>
-      <button className="bg-blue-400 text-white py-3 px-6 rounded-xl hover:bg-blue-600 text-xl font-bold mt-4">
-        Create
-      </button>
+      <button className="bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg">Create</button>
       <div className="overflow-hidden rounded-lg border border-gray-800 mt-4">
         <table className="min-w-full bg-white">
           <thead className="bg-gray-300 text-black-700">
@@ -51,9 +50,9 @@ function BookCatalogPage() {
             {books.map((book) => (
               <tr key={book.id} className="hover:bg-gray-100 border-b border-gray-800">
                 <td className="py-2 px-4">
-                  <button className="bg-blue-400 text-white py-1 px-3 rounded hover:bg-blue-500">
+                  <Link className="bg-blue-400 text-white py-1 px-3 rounded hover:bg-blue-500" to={`/ViewBookCatalog/${book.id}`}>
                     View
-                  </button>
+                  </Link>
                 </td>
                 <td className="py-2 px-4">{book.isbn}</td>
                 <td className="py-2 px-4">{book.title}</td>
