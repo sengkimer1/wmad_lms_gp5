@@ -11,7 +11,7 @@ import CreateUserAccountListPage from "./pages/UserAcc/CreatUserAccountListPage"
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
 import ViewMember from "./pages/member/ViewMember";
-import ExampleCreatePage from "./components/UpdateListMember";
+import ExampleCreatePage from "./components/CreateListMember";
 import MembersPage from "./pages/member/MemberPage";
 
 function App() {
