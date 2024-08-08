@@ -29,7 +29,8 @@ const CreateUserAccountListPage = () => {
   return (
     <div className='container mx-auto p-4'>
       <h1 className='text-2xl font-bold mb-4'>User Account</h1>
-      <button className='mb-4 px-4 py-2 bg-indigo-500 text-white rounded hover:bg-blue-700'>Create</button>
+      <button className='mb-4 px-4 py-2 bg-indigo-500 text-white rounded hover:bg-blue-700'>
+        <Link to="/form">Create</Link></button>
       <table className='rounded-xl border-slate-800 min-w-full bg-white border border-gray-200'>
         <thead>
           <tr>

@@ -11,7 +11,7 @@ import CreateUserAccountListPage from "./pages/UserAcc/CreatUserAccountListPage"
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
 import UserAccountViewPage from "./pages/UserAcc/UserAccountViewPagess";
-
+import NewUserAccount from "./pages/UserAcc/NewUserAccount";
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
         <Route path="/book-issue" element={<BookIssuePage />} />
         <Route path="/member" element={<MemberPage />} />
         <Route path="/user_accounts/:id" element={<UserAccountViewPage />} />
+        <Route path="/form" element={<NewUserAccount />} />
         
       </Route>
     </Routes>
