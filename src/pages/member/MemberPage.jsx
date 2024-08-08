@@ -23,7 +23,9 @@ const MembersPage = () => {
     <div className="container mx-auto">
       <h1 className="text-3xl font-bold pb-5">Members</h1>
 
-      <button className="bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg">Create</button>
+      <button
+       className="bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg">
+        <Link to={`/Update-member/${members}`}>Create</Link></button>
 
       <div className="overflow-hidden rounded-xl border border-gray-500">
         <table className="min-w-full bg-white border-b">
@@ -61,6 +63,7 @@ const MembersPage = () => {
         </table>
       </div>
     </div>
+
   );
 };
 

@@ -11,6 +11,8 @@ import CreateUserAccountListPage from "./pages/UserAcc/CreatUserAccountListPage"
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
 import ViewMember from "./pages/member/ViewMember";
+import ExampleCreatePage from "./components/UpdateListMember";
+import MembersPage from "./pages/member/MemberPage";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/book-issue" element={<BookIssuePage />} />
         <Route path="/member" element={<MemberPage />} />
         <Route path="/view-member/:id" element={<ViewMember />} />
+        <Route path="/Update-member/:id" element={<ExampleCreatePage />} />
+
       </Route>
     </Routes>
     

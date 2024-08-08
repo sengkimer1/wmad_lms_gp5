@@ -27,14 +27,12 @@ function ViewBookCatalog() {
         console.error("Error", error);
       });
   }, [id]);
-
   const handleDelete = (id) => {
     const isConfirmed = window.confirm("Are you sure you want to delete this member?");
     
     if (isConfirmed) {
       const token = localStorage.getItem("token");
       navigate("/member");
-      
       fetch(`http://localhost:3000/api/members/`+id, {
         method: "DELETE",
         headers: {
