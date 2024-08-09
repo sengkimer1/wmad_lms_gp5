@@ -32,7 +32,7 @@ function BookCatalogPage() {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Book Catalog</h1>
-      <button className="bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg">Create</button>
+      <button className="bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg"> <Link to="/create">Create</Link></button>
       <div className="overflow-hidden rounded-lg border border-gray-800 mt-4">
         <table className="min-w-full bg-white">
           <thead className="bg-gray-300 text-black-700">

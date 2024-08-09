@@ -11,6 +11,7 @@ import CreateUserAccountListPage from "./pages/UserAcc/CreatUserAccountListPage"
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
 import ViewBookCatalog from "./pages/bookCatalog/View-bookCatalog";
+import Create from "./pages/bookCatalog/CreateBookcatalog";
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
         <Route path="/book-issue" element={<BookIssuePage />} />
         <Route path="/member" element={<MemberPage />} />
         <Route path="/ViewBookCatalog/:id" element={<ViewBookCatalog />} />
+        <Route path="/create" element={<Create />} />
+
       </Route>
     </Routes>
     

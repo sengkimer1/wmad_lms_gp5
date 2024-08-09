@@ -1,6 +1,7 @@
 import { Link } from "@radix-ui/themes";
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Button from "../../components/Button";
 
 
 function ViewBookCatalog() {
@@ -53,24 +54,22 @@ function ViewBookCatalog() {
     <div className="container mx-auto ">
       <h1 className="text-2xl font-bold  pb-5">Book Catalog Information</h1>
       <div className="flex justify- mt-4 py-4">
-      <button
-          className="bg-gray-500 text-white py-2 px-5 rounded-lg mr-4"
-        >
-          Back
-        </button>
-
-        <button
-          
-          className="bg-blue-500 text-white py-2 px-5 rounded-lg mr-4"
-        >
-          Update
-        </button>
-        <button
-          onClick={() =>handleDelete(books.id)}
-          className="bg-red-500 text-white py-2 px-5 rounded-lg"
-        >
-          Delete
-        </button>
+      <Button 
+        text="Back" 
+        kind="bg-blue-500 hover:bg-blue-700" 
+        onClick={() => navigate("/book-catalog")}
+      />
+       <Button 
+        text="update" 
+        kind="Button-blue" 
+        onClick={() => navigate("/book-catalog")}
+      />
+      
+        <Button 
+        text="Delete" 
+        kind="Button-red" 
+        onClick={() =>handleDelete(books.id)}
+      />
         
       </div>
       <div className="bg-white shadow rounded-lg overflow-hidden">
