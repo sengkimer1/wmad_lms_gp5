@@ -48,7 +48,8 @@ function ViewBookCatalog() {
       <h1 className="text-2xl font-bold mb-4">Member Information</h1>
 
       <div className="flex mt-4 py-4">
-        <button className="bg-gray-500 text-white py-2 px-5 rounded-lg mr-4">
+        <button className="bg-gray-500 text-white py-2 px-5 rounded-lg mr-4"
+        onClick={() => navigate("/member")}>
           Back
         </button>
 

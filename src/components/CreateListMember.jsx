@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import React from 'react'
+import React from "react";
 
-function ExampleCreatePage() {
+function CreateMember() {
   const [firstname, setFirstName] = useState("");
   const [phone, setPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
   const [startDate, setStartDate] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
-  const [email, setEmail] = useState(""); 
+  const [email, setEmail] = useState("");
 
   const navigate = useNavigate();
 
@@ -21,9 +21,8 @@ function ExampleCreatePage() {
       expiry_date: expiryDate,
       phone,
       address,
-      email, 
+      email,
     });
-
     fetch(`http://localhost:3000/api/members/`, {
       method: "POST",
       headers: {
@@ -31,21 +30,25 @@ function ExampleCreatePage() {
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        fullname: `${firstname}`,
+        fullname: firstname,
         date_of_birth: "2024-08-08",
-        address: `${address}`,
-        phone_number: `${phone}`,
-        email: `${email}`, 
-        start_date: `${startDate}`,
-        expiry_date: `${expiryDate}`,
+        address: address,
+        phone_number: phone,
+        email: email,
+        start_date: startDate,
+        expiry_date: expiryDate,
         is_active: true,
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log(data);
         navigate("/member");
-        
       })
       .catch((error) => {
         console.error("Error:", error.message || "Unknown error");
@@ -120,6 +123,7 @@ function ExampleCreatePage() {
           <button
             type="button"
             className="bg-gray-400 text-white px-8 py-2 mb-4 rounded-lg"
+            onClick={() => navigate("/member")}
           >
             Cancel
           </button>
@@ -135,4 +139,4 @@ function ExampleCreatePage() {
   );
 }
 
-export default ExampleCreatePage;
+export default CreateMember;

@@ -25,7 +25,7 @@ const MembersPage = () => {
 
       <button
        className="bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg">
-        <Link to={`/Update-member/${members}`}>Create</Link></button>
+        <Link to={`/Create-member/${members}`}>Create</Link></button>
 
       <div className="overflow-hidden rounded-xl border border-gray-500">
         <table className="min-w-full bg-white border-b">
