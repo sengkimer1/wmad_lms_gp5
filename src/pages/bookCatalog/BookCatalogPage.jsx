@@ -50,7 +50,7 @@ function BookCatalogPage() {
             {books.map((book) => (
               <tr key={book.id} className="hover:bg-gray-100 border-b border-gray-800">
                 <td className="py-2 px-4">
-                  <Link className="bg-blue-400 text-white py-1 px-3 rounded hover:bg-blue-500" to={`/ViewBookCatalog/${book.id}`}>
+                  <Link className="bg-blue-400 text-white py-1 px-3 rounded hover:bg-blue-500" to={`/book-catalog/${book.id}`}>
                     View
                   </Link>
                 </td>

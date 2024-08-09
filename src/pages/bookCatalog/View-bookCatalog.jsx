@@ -52,7 +52,7 @@ function ViewBookCatalog() {
   
   return (
     <div className="container mx-auto ">
-      <h1 className="text-2xl font-bold  pb-5">Book Catalog Information</h1>
+      <h1 className="text-2xl font-bold  ">Book Catalog Information</h1>
       <div className="flex justify- mt-4 py-4">
       <Button 
         text="Back" 
@@ -75,7 +75,6 @@ function ViewBookCatalog() {
       <div className="bg-white shadow rounded-lg overflow-hidden">
         <table className="min-w-full bg-white">
           <tbody>
-            
                 <tr className="border-t border-gray-200">
                   <td className="px-6 py-5 text-black font-semibold">ISBN</td>
                   <td className="px-6 py-5">{books.isbn}</td>
