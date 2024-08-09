@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 function BookCatalogPage() {
@@ -32,7 +33,7 @@ function BookCatalogPage() {
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Book Catalog</h1>
       <button className="bg-blue-400 text-white py-3 px-6 rounded-xl hover:bg-blue-600 text-xl font-bold mt-4">
-        Create
+        <Link to='/create-book-catalog'>Create</Link>
       </button>
       <div className="overflow-hidden rounded-lg border border-gray-800 mt-4">
         <table className="min-w-full bg-white">
