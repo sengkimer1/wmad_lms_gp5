@@ -8,6 +8,9 @@ import NotFoundPage from "./pages/NotFoundPage";
 import CreateUserAccountListPage from "./pages/UserAcc/CreatUserAccountListPage"
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
+
+import BookIssueInformation from "./pages/bookIssue/Bookissue-information"
+
 import ViewBookCatalog from "./pages/bookCatalog/View-bookCatalog";
 
 
@@ -22,6 +25,7 @@ import ViewMember from "./components/ViewMember";
 import UserAccountViewPage from "./pages/UserAcc/UserAccountViewPagess";
 import NewUserAccount from "./pages/UserAcc/NewUserAccount";
 import Create from "./pages/bookCatalog/CreateBookcatalog";
+
 
 
 function App() {
@@ -39,6 +43,9 @@ function App() {
         <Route path="/book-issue" element={<BookIssuePage />} />
         <Route path="/member" element={<MemberPage />} />
 
+        <Route path="/book-issue/:id" element={<BookIssueInformation />} />
+
+
         <Route path="/book-catalog/:id" element={<ViewBookCatalog />} />
      
 
@@ -51,6 +58,7 @@ function App() {
         <Route path="/user_accounts/:id" element={<UserAccountViewPage />} />
         <Route path="/form" element={<NewUserAccount />} />
         <Route path="/create-book-catalog" element={<Create />} />
+
 
 
 
