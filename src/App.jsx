@@ -9,7 +9,13 @@ import CreateUserAccountListPage from "./pages/UserAcc/CreatUserAccountListPage"
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
 
+import ViewMember from "./pages/member/ViewMember";
+import CreateMember from "./components/CreateListMember";
+// import MembersPage from "./pages/member/MemberPage";
+
+
 import ViewMember from "./components/ViewMember";
+
 
 import UserAccountViewPage from "./pages/UserAcc/UserAccountViewPagess";
 import NewUserAccount from "./pages/UserAcc/NewUserAccount";
@@ -33,9 +39,13 @@ function App() {
 
         <Route path="/view-member/:id" element={<ViewMember />} />
 
+        <Route path="/Create-member/:id" element={<CreateMember />} />
+
+
         <Route path="/user_accounts/:id" element={<UserAccountViewPage />} />
         <Route path="/form" element={<NewUserAccount />} />
         <Route path="/create-book-catalog" element={<Create />} />
+
 
       </Route>
     </Routes>
