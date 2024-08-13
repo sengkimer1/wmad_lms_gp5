@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 
 function BookCatalogPage() {
-
-  const [books, setData] = useState([]);
+  const [books, setBooks] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const booksPerPage = 10;
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-
 
     fetch("http://localhost:3000/api/books", {
       method: "GET",
@@ -21,54 +21,84 @@ function BookCatalogPage() {
       })
       .then((data) => {
         console.log("Data", data);
-        setData(data);
+        setBooks(data);
       })
       .catch((error) => {
         console.error("Error", error);
       });
   }, []);
 
+  const currentBooks = books.slice(
+    (currentPage - 1) * booksPerPage,
+    currentPage * booksPerPage
+  );
+
+  const nextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto">
       <h1 className="text-2xl font-bold mb-4">Book Catalog</h1>
       <button className="bg-blue-400 text-white py-3 px-6 rounded-xl hover:bg-blue-600 text-xl font-bold mt-4">
-        Create
+        <Link to='/create-book-catalog'>Create</Link> 
       </button>
       <div className="overflow-hidden rounded-lg border border-gray-800 mt-4">
         <table className="min-w-full bg-white">
           <thead className="bg-gray-300 text-black-700">
             <tr className="border-b border-gray-800">
-              <th className="py-2 px-4 text-left">Action</th>
-              <th className="py-2 px-4 text-left">ISBN</th>
-              <th className="py-2 px-4 text-left">Title</th>
-              <th className="py-2 px-4 text-left">Authors</th>
-              <th className="py-2 px-4 text-left">Publisher</th>
-              <th className="py-2 px-4 text-left">Genre</th>
-              <th className="py-2 px-4 text-left">Shelf Location</th>
+              <th className="px-7 py-5 text-left">Action</th>
+              <th className="px-7 py-5 text-left">ISBN</th>
+              <th className="px-7 py-5 text-left">Title</th>
+              <th className="px-7 py-5 text-left">Authors</th>
+              <th className="px-7 py-5 text-left">Publisher</th>
+              <th className="px-7 py-5 text-left">Genre</th>
+              <th className="px-7 py-5 text-left">Shelf Location</th>
             </tr>
           </thead>
           <tbody>
-            {books.map((book) => (
+            {currentBooks.map((book) => (
               <tr key={book.id} className="hover:bg-gray-100 border-b border-gray-800">
-                <td className="py-2 px-4">
-                  <button className="bg-blue-400 text-white py-1 px-3 rounded hover:bg-blue-500">
+                <td className="px-7 py-5">
+                  <button className="bg-blue-500 text-white px-4 py-1 rounded-lg">
                     View
                   </button>
                 </td>
-                <td className="py-2 px-4">{book.isbn}</td>
-                <td className="py-2 px-4">{book.title}</td>
-                <td className="py-2 px-4">{book.authors}</td>
-                <td className="py-2 px-4">{book.publisher}</td>
-                <td className="py-2 px-4">{book.genre}</td>
-                <td className="py-2 px-4">{book.shelf_location}</td>
+                <td className="px-7 py-5">{book.isbn}</td>
+                <td className="px-7 py-5">{book.title}</td>
+                <td className="px-7 py-5">{book.authors}</td>
+                <td className="px-7 py-5">{book.publisher}</td>
+                <td className="px-7 py-5">{book.genre}</td>
+                <td className="px-7 py-5">{book.shelf_location}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+
+      <div className="flex justify-end mt-4">
+        <button
+          onClick={prevPage}
+          disabled={currentPage === 1}
+          className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg disabled:opacity-50"
+        >
+          &larr; Prev
+        </button>
+        <span className="px-4 py-2">{currentPage}</span>
+        <button
+          onClick={nextPage}
+          disabled={currentPage * booksPerPage >= books.length}
+          className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg disabled:opacity-50"
+        >
+          Next &rarr;
+        </button>
+      </div>
     </div>
   );
-  
-  
 }
+
 export default BookCatalogPage;
