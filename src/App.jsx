@@ -9,9 +9,9 @@ import CreateUserAccountListPage from "./pages/UserAcc/CreatUserAccountListPage"
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
 import ViewBookCatalog from "./pages/bookCatalog/View-bookCatalog";
+import CreateMember from "./components/CreateListMember"
 
-
-import ViewBookCatalog from "./pages/member/ViewMember";
+import ViewMember from "./pages/member/ViewMember";
 
 import UserAccountViewPage from "./pages/UserAcc/UserAccountViewPagess";
 import NewUserAccount from "./pages/UserAcc/NewUserAccount";
