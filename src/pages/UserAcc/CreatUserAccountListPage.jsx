@@ -30,8 +30,8 @@ const CreateUserAccountListPage = () => {
     <div className='container mx-auto p-4'>
       <h1 className='text-2xl font-bold mb-4'>User Account</h1>
       <button className='mb-4 px-4 py-2 bg-indigo-500 text-white rounded hover:bg-blue-700'>
-        <Link to="/form">Create</Link></button>
-      <table className='rounded-xl border-slate-800 min-w-full bg-white border border-gray-200'>
+        <Link to="/user-account/new">Create</Link></button>
+      <table className='rounded-xl border-slate-800 min-w-full bg-white border'>
         <thead>
           <tr>
             <th className='border-current py-2 px-4 border-b text-left'>Action</th>
@@ -46,7 +46,7 @@ const CreateUserAccountListPage = () => {
           {users.map((user, index) => (
             <tr key={index} className='hover:bg-gray-100'>
               <td className='border-current py-2 px-4 border-b'>
-                <Link className='px-2 py-1 bg-indigo-500 text-white rounded hover:bg-green-500' to={`/user_accounts/${user.id}`}>
+                <Link className='px-2 py-1 bg-indigo-500 text-white rounded hover:bg-green-500' to={`/user-account/${user.id}`}>
                   view
                 </Link>
               </td>

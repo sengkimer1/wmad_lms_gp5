@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-function ViewBookCatalog() {
+function ViewMember() {
   const [members, setData] = useState({});
   const { id } = useParams();
   const navigate = useNavigate();
@@ -117,4 +117,4 @@ function ViewBookCatalog() {
   );
 }
 
-export default ViewBookCatalog;
+export default ViewMember;
