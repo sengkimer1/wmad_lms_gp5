@@ -48,7 +48,7 @@ function BookCatalogPage() {
     <div className="container mx-auto">
       <h1 className="text-2xl font-bold mb-4">Book Catalog</h1>
       <button className="bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg">
-        <Link to="/create-book-catalog">Create</Link>
+        <Link to="/book-catalog/new">Create</Link>
       </button>
 
       {loading ? (

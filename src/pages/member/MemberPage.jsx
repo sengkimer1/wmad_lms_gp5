@@ -25,7 +25,7 @@ const MembersPage = () => {
 
       <button
        className="bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg">
-        <Link to={`/Create-member/${members}`}>Create</Link></button>
+        <Link to={`/member/new`}>Create</Link></button>
 
       <div className="overflow-hidden rounded-xl border border-gray-500">
         <table className="min-w-full bg-white border-b">
@@ -43,10 +43,10 @@ const MembersPage = () => {
           <tbody>
             {members.map((member, index) => (
               <tr key={index}>
-                <td className="py-2 px-4">
+                <td className="py-5 px-7 border-b border-black">
                   <Link 
-                    className="bg-blue-400 text-white py-1 px-3 rounded hover:bg-blue-500"
-                    to={`/view-member/${member.id}`}
+                    className="bg-blue-400 text-white py-1 px-3 rounded hover:bg-blue-500 "
+                    to={`/member/${member.id}`}
                   >
                     View
                   </Link>
