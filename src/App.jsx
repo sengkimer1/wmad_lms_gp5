@@ -14,7 +14,7 @@ import CreateMember from "./components/CreateListMember";
 // import MembersPage from "./pages/member/MemberPage";
 
 
-import ViewMember from "./components/ViewMember";
+// import ViewMember from "./components/ViewMember";
 
 
 import UserAccountViewPage from "./pages/UserAcc/UserAccountViewPagess";
