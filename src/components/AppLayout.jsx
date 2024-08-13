@@ -28,12 +28,12 @@ function AppLayout() {
             >
               User Account
             </Link>
-            <Link
+            {/* <Link
               to="/View-Page"
               className="block py-2.5 px-4 hover:bg-gray-700"
             >
               View Page
-            </Link>
+            </Link> */}
             <Link
               to="/book-catalog"
               className="block py-2.5 px-4 hover:bg-gray-700"

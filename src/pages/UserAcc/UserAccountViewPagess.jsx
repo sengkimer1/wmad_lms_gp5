@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams,useNavigate } from 'react-router-dom';
+import { useParams,useNavigate, Link } from 'react-router-dom';
 
 const token = localStorage.getItem("token");
 
@@ -51,8 +51,8 @@ const UserAccountDetailsPage = () => {
     <div className="container p-4">
       <h1 className="text-2xl font-bold mb-4">User Account Details</h1>
       <div className="mr-2 -mt-4 py-4 flex">
-      <button className="mr-2 bg-gray-500 text-white py-2 px-5 rounded-lg hover:bg-gray-600 " type='submit' >Back</button>
-      <button className="mr-2 bg-blue-500 text-white py-2 px-5 rounded-lg hover:bg-blue-600 ">Update</button>
+      <Link to={`/user-account`} className="mr-2 bg-gray-500 text-white py-2 px-5 rounded-lg hover:bg-gray-600 ">Back</Link>
+      <Link to={`/form`} className="mr-2 bg-blue-500 text-white py-2 px-5 rounded-lg hover:bg-blue-600 ">Update</Link>
         <form method='post' action='destroy' onSubmit={handleDelete}>
         <button className="mr-2 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-red-600 " type='submit'>Delete</button>
         </form>
