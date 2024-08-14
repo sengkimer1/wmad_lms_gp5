@@ -18,19 +18,19 @@ const Create = () => {
     shelf_location: '',
     description: ''
   });
-   
-  const navigate = useNavigate();  
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   const numericalFields = ['publication_year', 'number_of_pages'];
-  //   const newValue = numericalFields.includes(name) ? parseInt(value, 10) || '' : value;
+  const navigate = useNavigate();
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const numericalFields = ['publication_year', 'number_of_pages'];
+    const newValue = numericalFields.includes(name) ? parseInt(value, 10) || '' : value;
 
-  //   setFormData({
-  //     ...formData,
-  //     [name]: newValue
-  //   });
-  // };
+    setFormData({
+      ...formData,
+      [name]: newValue
+    });
+  };
 
   const token = localStorage.getItem("token");
 
@@ -44,7 +44,7 @@ const Create = () => {
     })
       .then(res => {
         alert("Data Posted Successfully");
-        navigate('/book-catalog');  
+        navigate('/book-catalog');
       })
       .catch(err => {
         console.error(err);
@@ -67,7 +67,7 @@ const Create = () => {
       shelf_location: '',
       description: ''
     });
-    navigate('/book-catalog');  
+    navigate('/book-catalog');
   };
 
   return (
@@ -87,42 +87,42 @@ const Create = () => {
               label="Authors"
               name="authors"
               value={formData.authors}
-              onChange={handleCancel}
+              onChange={handleChange}
               placeholder="Authors"
             />
             <InputField
               label="ISBN"
               name="isbn"
               value={formData.isbn}
-              onChange={handleCancel}
+              onChange={handleChange}
               placeholder="ISBN"
             />
             <InputField
               label="Publisher"
               name="publisher"
               value={formData.publisher}
-              onChange={handleCancel}
+              onChange={handleChange}
               placeholder="Publisher"
             />
             <InputField
               label="Publication Year"
               name="publication_year"
               value={formData.publication_year}
-              onChange={handleCancel}
+              onChange={handleChange}
               placeholder="Publication Year"
             />
             <InputField
               label="Edition"
               name="edition"
               value={formData.edition}
-              onChange={handleCancel}
+              onChange={handleChange}
               placeholder="Edition"
             />
             <InputField
               label="Genre"
               name="genre"
               value={formData.genre}
-              onChange={handleCancel}
+              onChange={handleChange}
               placeholder="Genre"
             />
           </div>
@@ -131,32 +131,32 @@ const Create = () => {
               label="Language"
               name="language"
               value={formData.language}
-              onChange={handleCancel}
+              onChange={handleChange}
               placeholder="Language"
             />
             <InputField
               label="Number of Pages"
               name="number_of_pages"
               value={formData.number_of_pages}
-              onChange={handleCancel}
+              onChange={handleChange}
               placeholder="Number of Pages"
             />
             <InputField
               label="Cover Image URL"
               name="cover_image_url"
               value={formData.cover_image_url}
-              onChange={handleCancel}
+              onChange={handleChange}
               placeholder="Cover Image URL"
             />
             <InputField
               label="Shelf Location"
               name="shelf_location"
               value={formData.shelf_location}
-              onChange={handleCancel}
+              onChange={handleChange}
               placeholder="Shelf Location"
             />
             <div>
-              <label className=" block mb-2">Description</label>
+              <label className="block mb-2">Description</label>
               <textarea
                 name="description"
                 value={formData.description}
