@@ -26,7 +26,8 @@ function BookIssueTable() {
     <div className="container mx-auto">
       <h1 className="text-3xl mb-4">Book Issue</h1>
       
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mb-4">
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mb-4"
+      onClick={()=>("/book-issue")}>
         Create
       </button>
       <div className="overflow-hidden rounded-xl border border-gray-500">

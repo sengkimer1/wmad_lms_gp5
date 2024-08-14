@@ -93,7 +93,7 @@ function ViewBookCatalog() {
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="px-6 py-5 text-black font-semibold">Publication Year</td>
-                  <td className="px-6 py-5">{books.publicationYear}</td>
+                  <td className="px-6 py-5">{books.publication_year}</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="px-6 py-5 text-black font-semibold">Edition</td>
@@ -109,11 +109,11 @@ function ViewBookCatalog() {
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="px-6 py-5 text-black font-semibold">Number of Pages</td>
-                  <td className="px-6 py-5 text-blue-500">{books.pages}</td>
+                  <td className="px-6 py-5 text-blue-500">{books.number_of_pages}</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="px-6 py-5 text-black font-semibold">Shelf Location</td>
-                  <td className="px-6 py-5">{books.shelfLocation}</td>
+                  <td className="px-6 py-5">{books.shelf_location}</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="px-6 py-5 text-black font-semibold">Description</td>

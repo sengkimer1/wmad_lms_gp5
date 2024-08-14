@@ -18,6 +18,8 @@ const Create = () => {
     shelf_location: '',
     description: ''
   });
+
+  console.log(formData,"===formdata======")
    
   const navigate = useNavigate();  
 
@@ -27,7 +29,8 @@ const Create = () => {
     const newValue = numericalFields.includes(name) ? parseInt(value, 10) || '' : value;
 
     setFormData({
-      ...formData,
+      ...formData.data.publication_year,
+      
       [name]: newValue
     });
   };
@@ -38,6 +41,7 @@ const Create = () => {
     e.preventDefault();
 
     axios.post('http://localhost:3000/api/books', formData, {
+      
       headers: {
         'Authorization': `Bearer ${token}`
       },

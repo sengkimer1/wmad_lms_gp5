@@ -13,12 +13,11 @@ const NewUserAccount = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-   
-    const active = isActive === 'true';
-    const activated = isActivated === 'true';
+    const active = isActive === "true";
+    const activated = isActivated === "true";
 
     const data = {
       user_role_id: parseInt(userRoleId),
@@ -28,20 +27,22 @@ const NewUserAccount = () => {
       is_activated: activated,
       is_active: active,
     };
-    
+
     try {
-      const res = await axios.post("http://localhost:3000/api/user_accounts", data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await axios.post(
+        "http://localhost:3000/api/user_accounts",
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setUsername(res.data.username);
-      
-        
-        alert("Data Posted Successfully");
-        navigate('/user-account');
-      
-      
+
+      alert("Data Posted Successfully");
+      navigate("/user-account");
+
       console.log(res.data);
     } catch (error) {
       console.error("Error fetching user accounts:", error.response);
@@ -139,13 +140,13 @@ const NewUserAccount = () => {
           <button
             type="button"
             className="bg-gray-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-gray-600 mr-3"
-            onClick={() => navigate('/user-account')}
+            // onClick={() => navigate('/user-account')}
           >
             Cancel
           </button>
           <button
             type="submit"
-            onClick={()=>navigate(`/user_accounts/${id}`)}
+            // onClick={()=>navigate(`/user_accounts/${id}`)}
             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
           >
             Save

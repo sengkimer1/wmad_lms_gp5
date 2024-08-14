@@ -27,38 +27,40 @@ const CreateUserAccountListPage = () => {
   }, []);
 
   return (
-    <div className='container mx-auto p-4'>
+    <div className='container mx-auto'>
       <h1 className='text-2xl font-bold mb-4'>User Account</h1>
-      <button className='mb-4 px-4 py-2 bg-indigo-500 text-white rounded hover:bg-blue-700'>
+      <button className='bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg'>
         <Link to="/user-account/new">Create</Link></button>
-      <table className='rounded-xl border-slate-800 min-w-full bg-white border'>
-        <thead>
-          <tr>
-            <th className='border-current py-2 px-4 border-b text-left'>Action</th>
-            <th className='border-current py-2 px-4 border-b text-left'>Username</th>
-            <th className='border-current py-2 px-4 border-b text-left'>Email</th>
-            <th className='border-current py-2 px-4 border-b text-left'>Role</th>
-            <th className='border-current py-2 px-4 border-b text-left'>Is Active</th>
-            <th className='border-current py-2 px-4 border-b text-left'>Is Activated</th>
+        <div className="overflow-hidden rounded-lg border border-gray-800 mt-4">
+      <table className='min-w-full bg-white'>
+        <thead className="bg-gray-300 text-black-700">
+          <tr  className="border-b border-gray-800">
+            <th className='px-7 py-5 text-left'>Action</th>
+            <th className='px-7 py-5 text-left'>Username</th>
+            <th className='px-7 py-5 text-left'>Email</th>
+            <th className='px-7 py-5 text-left'>Role</th>
+            <th className='px-7 py-5 text-left'>Is Active</th>
+            <th className='px-7 py-5 text-left'>Is Activated</th>
           </tr>
         </thead>
         <tbody>
           {users.map((user, index) => (
-            <tr key={index} className='hover:bg-gray-100'>
-              <td className='border-current py-2 px-4 border-b'>
-                <Link className='px-2 py-1 bg-indigo-500 text-white rounded hover:bg-green-500' to={`/user-account/${user.id}`}>
+            <tr key={index} className='hover:bg-gray-100 border-b border-gray-800'>
+              <td className='py-2 px-4'>
+                <Link className='bg-blue-400 text-white py-1 px-3 rounded hover:bg-blue-500' to={`/user-account/${user.id}`}>
                   view
                 </Link>
               </td>
-              <td className='border-current py-2 px-4 border-b'>{user.username}</td>
-              <td className='border-current py-2 px-4 border-b'>{user.email}</td>
-              <td className='border-current py-2 px-4 border-b'>{user.user_role.user_role_name}</td>
-              <td className='border-current py-2 px-4 border-b'>{user.is_active ? 'Yes' : 'No'}</td>
-              <td className='border-current py-2 px-4 border-b'>{user.is_activated ? 'Yes' : 'No'}</td>
+              <td className='px-7 py-5'>{user.username}</td>
+              <td className='px-7 py-5'>{user.email}</td>
+              <td className='px-7 py-5'>{user.user_role.user_role_name}</td>
+              <td className='px-7 py-5'>{user.is_active ? 'Yes' : 'No'}</td>
+              <td className='px-7 py-5'>{user.is_activated ? 'Yes' : 'No'}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };
