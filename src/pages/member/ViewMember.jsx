@@ -53,7 +53,8 @@ function ViewMember() {
           Back
         </button>
 
-        <button className="bg-blue-500 text-white py-2 px-5 rounded-lg mr-4">
+        <button className="bg-blue-500 text-white py-2 px-5 rounded-lg mr-4"
+        onClick={() => navigate("/member/new")}>
           Update
         </button>
         <button
