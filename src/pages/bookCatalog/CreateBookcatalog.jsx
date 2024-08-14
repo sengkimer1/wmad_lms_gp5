@@ -21,16 +21,16 @@ const Create = () => {
    
   const navigate = useNavigate();  
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    const numericalFields = ['publication_year', 'number_of_pages'];
-    const newValue = numericalFields.includes(name) ? parseInt(value, 10) || '' : value;
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   const numericalFields = ['publication_year', 'number_of_pages'];
+  //   const newValue = numericalFields.includes(name) ? parseInt(value, 10) || '' : value;
 
-    setFormData({
-      ...formData,
-      [name]: newValue
-    });
-  };
+  //   setFormData({
+  //     ...formData,
+  //     [name]: newValue
+  //   });
+  // };
 
   const token = localStorage.getItem("token");
 
@@ -87,42 +87,42 @@ const Create = () => {
               label="Authors"
               name="authors"
               value={formData.authors}
-              onChange={handleChange}
+              onChange={handleCancel}
               placeholder="Authors"
             />
             <InputField
               label="ISBN"
               name="isbn"
               value={formData.isbn}
-              onChange={handleChange}
+              onChange={handleCancel}
               placeholder="ISBN"
             />
             <InputField
               label="Publisher"
               name="publisher"
               value={formData.publisher}
-              onChange={handleChange}
+              onChange={handleCancel}
               placeholder="Publisher"
             />
             <InputField
               label="Publication Year"
               name="publication_year"
               value={formData.publication_year}
-              onChange={handleChange}
+              onChange={handleCancel}
               placeholder="Publication Year"
             />
             <InputField
               label="Edition"
               name="edition"
               value={formData.edition}
-              onChange={handleChange}
+              onChange={handleCancel}
               placeholder="Edition"
             />
             <InputField
               label="Genre"
               name="genre"
               value={formData.genre}
-              onChange={handleChange}
+              onChange={handleCancel}
               placeholder="Genre"
             />
           </div>
@@ -131,28 +131,28 @@ const Create = () => {
               label="Language"
               name="language"
               value={formData.language}
-              onChange={handleChange}
+              onChange={handleCancel}
               placeholder="Language"
             />
             <InputField
               label="Number of Pages"
               name="number_of_pages"
               value={formData.number_of_pages}
-              onChange={handleChange}
+              onChange={handleCancel}
               placeholder="Number of Pages"
             />
             <InputField
               label="Cover Image URL"
               name="cover_image_url"
               value={formData.cover_image_url}
-              onChange={handleChange}
+              onChange={handleCancel}
               placeholder="Cover Image URL"
             />
             <InputField
               label="Shelf Location"
               name="shelf_location"
               value={formData.shelf_location}
-              onChange={handleChange}
+              onChange={handleCancel}
               placeholder="Shelf Location"
             />
             <div>
