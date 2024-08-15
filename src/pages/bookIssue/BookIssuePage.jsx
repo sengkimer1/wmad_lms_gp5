@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
-const URL = `http://localhost:3000/api/book_issues`;
+const URL = `https://wmad-library-backend-six.vercel.app/api/book_issues`;
 const token = localStorage.getItem("token");
 
 
@@ -34,7 +34,7 @@ function BookIssueTable() {
         <table className="min-w-full bg-white">
           <thead>
             <tr>
-              <th className=" ">Action</th>
+              <th className=" px-6 py-3 border-b border-black text-left">Action</th>
               <th className="px-6 py-3 border-b border-black text-left">ISBN</th>
               <th className="px-6 py-3 border-b border-black text-left">Title</th>
               <th className="px-6 py-3 border-b border-black text-left">Member</th>

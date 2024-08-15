@@ -30,7 +30,7 @@ const NewUserAccount = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/user_accounts",
+        "https://wmad-library-backend-six.vercel.app/api/user_accounts",
         data,
         {
           headers: {

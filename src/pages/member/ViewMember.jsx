@@ -33,7 +33,7 @@ function ViewMember() {
     if (isConfirmed) {
       const token = localStorage.getItem("token");
       navigate("/member");
-      fetch(`http://localhost:3000/api/members/` + id, {
+      fetch(`https://wmad-library-backend-six.vercel.app/api/members/` + id, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

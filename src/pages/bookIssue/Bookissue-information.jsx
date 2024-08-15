@@ -7,7 +7,7 @@ function BookIssueInformation() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const URL = `http://localhost:3000/api/book_issues/${id}`;
+    const URL = `https://wmad-library-backend-six.vercel.app/api/book_issues/${id}`;
     const token = localStorage.getItem("token");
 
     const fetchData = async () => {

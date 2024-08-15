@@ -10,7 +10,7 @@ function BookCatalogPage() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:3000/api/books", {
+    fetch("https://wmad-library-backend-six.vercel.app/api/books", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,

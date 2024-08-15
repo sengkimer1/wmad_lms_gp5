@@ -3,7 +3,7 @@ import axios from 'axios';
 const token = localStorage.getItem('token');
 
 const membersAPI = axios.create({
-  baseURL: 'http://localhost:3000/api', 
+  baseURL: 'https://wmad-library-backend-six.vercel.app/api/', 
   headers: {
     'Authorization': `Bearer ${token}`,
   },
