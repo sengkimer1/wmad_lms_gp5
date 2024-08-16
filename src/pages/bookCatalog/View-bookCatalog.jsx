@@ -15,7 +15,7 @@ function ViewBookCatalog() {
     const token = localStorage.getItem("token");
 
 
-     fetch(`http://localhost:3000/api/books/`+id, {
+     fetch(`https://wmad-library-backend-six.vercel.app/api/books/`+id, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
