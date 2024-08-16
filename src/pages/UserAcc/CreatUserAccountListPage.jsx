@@ -16,7 +16,7 @@ const CreateUserAccountListPage = () => {
   useEffect(() => {
     const fetchAccount = async () => {
       try {
-        const response = await accountAPI.get("/user_accounts");
+        const response = await accountAPI.get("/api/user_accounts");
         setUsers(response.data);
       } catch (error) {
         console.error("Error fetching user accounts:", error);
